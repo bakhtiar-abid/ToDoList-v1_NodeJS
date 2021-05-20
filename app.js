@@ -32,7 +32,7 @@ app.get("/", function (req, res) {
 
    app.post("/", function (req, res) {
 
- console.log(req.body);
+//  console.log(req.body);
 
 
       let item = req.body.newItem;
