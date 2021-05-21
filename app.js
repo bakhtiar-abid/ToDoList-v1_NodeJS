@@ -54,6 +54,11 @@ app.get("/work", function(req, res){
 
 });
 
+app.get("/about", function(req,res){
+
+   res.render("about");
+
+});
 
 
 app.listen(3000, function () {
