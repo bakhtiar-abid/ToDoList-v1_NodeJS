@@ -5,8 +5,8 @@ const date = require(__dirname + "/date.js");
 
 const app = express();
 
-let items = ["Buy Food", "Cook Food", "Eat Food"];
-let workItems = ["New Assignment"];
+const items = ["Buy Food", "Cook Food", "Eat Food"];
+const workItems = ["New Assignment"];
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -28,7 +28,7 @@ app.get("/", function (req, res) {
 //  console.log(req.body);
 
 
-      let item = req.body.newItem;
+      const item = req.body.newItem;
       if (req.body.list === "Work") {
 
          workItems.push(item);
