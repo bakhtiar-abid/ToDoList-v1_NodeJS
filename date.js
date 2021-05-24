@@ -11,9 +11,9 @@ let options = {
    year: "numeric",
 };
 
-let day = today.toLocaleDateString("en-US", options);
+return today.toLocaleDateString("en-US", options);
 
-return day;
+
 
   }
   
@@ -26,8 +26,8 @@ module.exports.getDay = getDay;
        weekday: "long",
     };
 
-    let day = today.toLocaleDateString("en-US", options);
+    return today.toLocaleDateString("en-US", options);
 
-    return day;
+     
  }
   
