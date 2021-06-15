@@ -106,7 +106,19 @@ app.listen(3000, function () {
 // });
 
 
+const projection = { _id: 0, rating: 1, name: 1 };
+const cursor = collection.find().project(projection);
+await cursor.forEach(console.dir);
 
+{ "name": "apples", "rating": 3 }
+{ "name": "bananas", "rating": 1 }
+{ "name": "oranges", "rating": 2 }
+{ "name": "avocados", "rating": 5 }
+
+{ "name": "apples" }
+{ "name": "bananas" }
+{ "name": "oranges" }
+{ "name": "avocados" }
 
 
 
