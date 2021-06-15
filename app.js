@@ -133,3 +133,12 @@ async function run() {
    }
 }
 run().catch(console.dir);
+
+
+const findResult = await orders.find({
+   name: "Lemony Snicket",
+   date: {
+      $gte: new Date(new Date().setHours(00, 00, 00)),
+      $lt: new Date(new Date().setHours(23, 59, 59)),
+   },
+});
