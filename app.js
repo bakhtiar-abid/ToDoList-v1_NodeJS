@@ -142,3 +142,22 @@ const findResult = await orders.find({
       $lt: new Date(new Date().setHours(23, 59, 59)),
    },
 });
+
+  const aggregateResult = await orders.aggregate([
+     {
+        $match: {
+           date: {
+              $gte: new Date(new Date().getTime() - 1000 * 3600 * 24 * 7),
+              $lt: new Date(),
+           },
+        },
+     },
+     {
+        $group: {
+           _id: "$status",
+           count: {
+              $sum: 1,
+           },
+        },
+     },
+  ]);
